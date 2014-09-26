@@ -11,6 +11,10 @@ public class CoreTypesFactory {
 	public CoreTypesFactory(Application app) {
 		this.app = app;
 	}
+	
+	public Application getApp() {
+		return app;
+	}
 
 	/**
 	 * Create an instance of {@link F000 }.

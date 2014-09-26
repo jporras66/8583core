@@ -66,7 +66,7 @@ public class AppBean {
 	protected static AppBean copy ( AppBean a ){
 		AppBean apb = new AppBean();
 		apb.setAppName( a.getAppName() );
-		apb.setDefaultDataCodification( a.getDefaultDataCodification());
+		apb.setDefaultDataCodification( a.getDefaultDataCodification() );
 		apb.setDefaultfieldFormat( a.getDefaultfieldFormat() ) ; 
 		apb.setDefaultLengthFormat( a.getDefaultLengthFormat() );
 		apb.htfield = deepCopy( a.htfield );

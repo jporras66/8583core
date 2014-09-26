@@ -1,6 +1,5 @@
 package es.indarsoft.iso8583core.app;
 
-import org.apache.log4j.Logger;
 
 /**
  * Application.
@@ -12,8 +11,6 @@ import org.apache.log4j.Logger;
  */
 public final class  Application {
 
-	static Logger log = Logger.getLogger( Application.class.getName() );
-//	
 	private AppBean apb  = null ;
 	
 	private Application ( String a ){
@@ -26,6 +23,25 @@ public final class  Application {
 		
 		LoadXmlField lxmlf = new LoadXmlField( ) ;
 		apb = lxmlf.parseAppXml( b ,  a) ;
+	}
+	
+	private Application ( AppBean apc ){
+		
+		apb = apc  ;
+	}
+	
+	/**
+	 * Copy Constructor for Application.
+	 * <p>
+	 * @param app
+	 * 			input Application
+	 * @return	new instance
+	 */
+	protected static Application copy ( Application app ){
+		
+		AppBean apc = app.getAppBean() ;
+		return new Application ( apc );
+		
 	}
 	/**
 	 * Static Constructor loads the Application from a XML filename
@@ -55,6 +71,6 @@ public final class  Application {
 	
 	public AppBean getAppBean () {
 
-		return apb ;
+		return AppBean.copy( this.apb ) ;
 	}
 }
