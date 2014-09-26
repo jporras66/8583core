@@ -1,0 +1,193 @@
+<?org.inds.iso8593core.xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE APP>
+<APP APLNAME="ISO8583CORE"> 
+<!--
+	Field Attributes :
+*************************************************************************************************************************
+		id							:   field id
+		lengthType					:	F(0), V(1)		( Fixed or Variable )		
+		name     	                :   Name for the field			
+		fieldFormat     			:	NUMERIC(0), AN(1), ANS(2) , BINARY(3)
+*************************************************************************************************************************		
+		fieldLength					:   Number of characters for that field	(only for fixed fields)		
+		fieldCodification          	: 	EBCDIC(0), ASCII(1), BCD(2)  
+											Only needed when fieldFormat NUMERIC(0), AN(1), ANS(2)
+											BCD only supported for NUMERIC data.
+											If fieldCodificationType not supplied use default value ( defaultFieldCodification ) 
+*************************************************************************************************************************
+		lengthFormat    			:	EBCDIC(0),  ASCII(1), BINARY(2)
+											If lengthFormat not supplied use default value ( defaultLengthFormat ) 
+		lengthOfLengthField			:	Number of digits for length
+		minfieldLength           	:   min number of characters for the field
+		maxfieldLength          	:   max number of characters for the field		
+*************************************************************************************************************************
+		defaultFieldCodification	:	EBCDIC(0), ASCII(1), BCD(2)
+*************************************************************************************************************************		
+
+-->
+
+	
+	<defaultFieldCodification>
+		<Value>EBCDIC</Value>
+	</defaultFieldCodification>
+	
+	<defaultLengthFormat>
+		<Value>EBCDIC</Value>
+	</defaultLengthFormat>
+
+<!--
+ISO 8583 defined data element	
+Nota : 
+	To review F28, F29, F30, F31 are 8 or 9 (MC Manul & Visa Dual Message)
+
+F35 Track 2
+	Asigned BINARY FORMAT.
+-->	
+
+ <field id="0" lengthType="F"   fieldFormat="NUMERIC"  fieldLength="4"   name="Mti"></field>
+ <field id="1" lengthType="F"   fieldFormat="BINARY"   fieldLength="8"   name="bitmap"></field>
+ <field id="3" lengthType="F"   fieldFormat="NUMERIC"  fieldLength="6"   name="Processing code"></field>
+ <field id="4" lengthType="F"   fieldFormat="NUMERIC"  fieldLength="12"  name="Amount, transaction"> </field>
+ <field id="5" lengthType="F"   fieldFormat="NUMERIC"  fieldLength="12"  name="Amount, settlement"> </field>
+ <field id="6" lengthType="F"   fieldFormat="NUMERIC"  fieldLength="12"  name="Amount, cardholder billing"> </field>
+ <field id="7" lengthType="F"   fieldFormat="NUMERIC"  fieldLength="10"  name="Transmission date time"> </field>
+ <field id="8" lengthType="F"   fieldFormat="NUMERIC"  fieldLength="8"   name="Amount, cardholder billing fee"> </field>
+ <field id="9" lengthType="F"   fieldFormat="NUMERIC"  fieldLength="8"   name="Conversion rate, settlement"> </field>
+ <field id="10" lengthType="F"  fieldFormat="NUMERIC"  fieldLength="8"   name="Conversion rate, cardholder billing"> </field>
+ <field id="11" lengthType="F"  fieldFormat="NUMERIC"  fieldLength="6"   name="System trace audit number"> </field>
+ <field id="12" lengthType="F"  fieldFormat="NUMERIC"  fieldLength="6"   name="Time, local transaction"> </field>
+ <field id="13" lengthType="F"  fieldFormat="NUMERIC"  fieldLength="4"   name="Date, local transaction"> </field>
+ <field id="14" lengthType="F"  fieldFormat="NUMERIC"  fieldLength="4"   name="Date, expiration"> </field>
+ <field id="15" lengthType="F"  fieldFormat="NUMERIC"  fieldLength="4"   name="Date, settlement"> </field>
+ <field id="16" lengthType="F"  fieldFormat="NUMERIC"  fieldLength="4"   name="Date, conversion"> </field>
+ <field id="17" lengthType="F"  fieldFormat="NUMERIC"  fieldLength="4"   name="Date, capture"> </field>
+ <field id="18" lengthType="F"  fieldFormat="NUMERIC"  fieldLength="4"   name="Merchant type"> </field>
+ <field id="19" lengthType="F"  fieldFormat="NUMERIC"  fieldLength="3"   name="Acquiring institution country code"> </field>
+ <field id="20" lengthType="F"  fieldFormat="NUMERIC"  fieldLength="3"   name="PAN extended, country code"> </field>
+ <field id="21" lengthType="F"  fieldFormat="NUMERIC"  fieldLength="3"   name="Forwarding institution country code"> </field>
+ <field id="22" lengthType="F"  fieldFormat="NUMERIC"  fieldLength="3"   name="Point of service entry mode"> </field>
+ <field id="23" lengthType="F"  fieldFormat="NUMERIC"  fieldLength="3"   name="Application PAN sequence number"> </field>
+ <field id="24" lengthType="F"  fieldFormat="NUMERIC"  fieldLength="3"   name="Network International identifier"> </field>
+ <field id="25" lengthType="F"  fieldFormat="NUMERIC"  fieldLength="2"   name="Point of service condition code"> </field>
+ <field id="26" lengthType="F"  fieldFormat="NUMERIC"  fieldLength="2"   name="Point of service capture code"> </field>
+ <field id="27" lengthType="F"  fieldFormat="NUMERIC"  fieldLength="1"   name="Authorizing identification response length"> </field>
+ <field id="28" lengthType="F"  fieldFormat="NUMERIC"  fieldLength="9"   name="Amount, transaction fee"> </field>
+ <field id="29" lengthType="F"  fieldFormat="NUMERIC"  fieldLength="9"   name="Amount, settlement fee"> </field>
+ <field id="30" lengthType="F"  fieldFormat="NUMERIC"  fieldLength="9"   name="Amount, transaction processing fee"> </field>
+ <field id="31" lengthType="F"  fieldFormat="NUMERIC"  fieldLength="9"   name="Amount, settlement processing fee"> </field>
+ <field id="37" lengthType="F"  fieldFormat="AN"       fieldLength="12"  name="Retrieval reference number"> </field>
+ <field id="38" lengthType="F"  fieldFormat="AN" 	   fieldLength="6"   name="Authorization identification response"> </field>
+ <field id="39" lengthType="F"  fieldFormat="AN" 	   fieldLength="2"   name="Response code"> </field>
+ <field id="40" lengthType="F"  fieldFormat="AN" 	   fieldLength="3"   name="Service restriction code"> </field>
+ <!--
+ <field id="41" lengthType="F"  fieldFormat="ANS" 	   fieldLength="16"  name="Card acceptor terminal identification"> </field>
+ -->
+ <field id="41" lengthType="F"  fieldFormat="ANS" 	   fieldLength="8"  name="Card acceptor terminal identification"> </field>
+ <field id="42" lengthType="F"  fieldFormat="ANS" 	   fieldLength="15"  name="Card acceptor identification code"> </field>
+ <field id="43" lengthType="F"  fieldFormat="ANS" 	   fieldLength="40"  name="Card acceptor name location"> </field>
+<!--
+  <field id="49" lengthType="F"  fieldFormat="AN" 	   fieldLength="3"   name="Currency code, transaction"> </field>
+ --> 
+ <field id="49" lengthType="F"  fieldFormat="NUMERIC"  fieldLength="3"   name="Currency code, transaction"> </field>
+ <field id="50" lengthType="F"  fieldFormat="NUMERIC"  fieldLength="3"   name="Currency code, settlement"> </field>
+ <field id="51" lengthType="F"  fieldFormat="NUMERIC"  fieldLength="3"   name="Currency code, cardholder billing"> </field>
+ <field id="52" lengthType="F"  fieldFormat="BINARY"   fieldLength="8"   name="Personal identification number data"> </field>
+<!--
+ <field id="53" lengthType="F"  fieldFormat="NUMERIC"  fieldLength="18"  name="Security related control information"> </field>
+ --> 
+ <field id="53" lengthType="F"  fieldFormat="NUMERIC"  fieldLength="16"  name="Security related control information"> </field>
+ <field id="64" lengthType="F"  fieldFormat="BINARY"   fieldLength="8"   name="Message authentication code"> </field>
+ <field id="65" lengthType="F"  fieldFormat="BINARY"   fieldLength="8"   name="Bit Map, Extended"> </field>
+ <field id="66" lengthType="F"  fieldFormat="NUMERIC"  fieldLength="1"   name="Settlement code"> </field>
+ <field id="67" lengthType="F"  fieldFormat="NUMERIC"  fieldLength="2"   name="Extended payment code"> </field>
+ <field id="68" lengthType="F"  fieldFormat="NUMERIC"  fieldLength="3"   name="Receiving institution country code"> </field>
+ <field id="69" lengthType="F"  fieldFormat="NUMERIC"  fieldLength="3"   name="Settlement institution country code"> </field>
+ <field id="70" lengthType="F"  fieldFormat="NUMERIC"  fieldLength="3"   name="Network management information code"> </field>
+ <field id="71" lengthType="F"  fieldFormat="NUMERIC"  fieldLength="4"   name="Message number"> </field>
+ <field id="73" lengthType="F"  fieldFormat="NUMERIC"  fieldLength="6"   name="Date, action"> </field>
+ <field id="74" lengthType="F"  fieldFormat="NUMERIC"  fieldLength="10"  name="Credits, number"> </field>
+ <field id="75" lengthType="F"  fieldFormat="NUMERIC"  fieldLength="10"  name="Credits, reversal number"> </field>
+ <field id="76" lengthType="F"  fieldFormat="NUMERIC"  fieldLength="10"  name="Debits, number"> </field>
+ <field id="77" lengthType="F"  fieldFormat="NUMERIC"  fieldLength="10"  name="Debits, reversal number"> </field>
+ <field id="78" lengthType="F"  fieldFormat="NUMERIC"  fieldLength="10"  name="Transfer number"> </field>
+ <field id="79" lengthType="F"  fieldFormat="NUMERIC"  fieldLength="10"  name="Transfer, reversal number"> </field>
+ <field id="80" lengthType="F"  fieldFormat="NUMERIC"  fieldLength="10"  name="Inquiries number"> </field>
+ <field id="81" lengthType="F"  fieldFormat="NUMERIC"  fieldLength="10"  name="Authorizations, number"> </field>
+ <field id="82" lengthType="F"  fieldFormat="NUMERIC"  fieldLength="12"  name="Credits, processing fee amount"> </field>
+ <field id="83" lengthType="F"  fieldFormat="NUMERIC"  fieldLength="12"  name="Credits, transaction fee amount"> </field>
+ <field id="84" lengthType="F"  fieldFormat="NUMERIC"  fieldLength="12"  name="Debits, processing fee amount"> </field>
+ <field id="85" lengthType="F"  fieldFormat="NUMERIC"  fieldLength="12"  name="Debits, transaction fee amount"> </field>
+ <field id="86" lengthType="F"  fieldFormat="NUMERIC"  fieldLength="15"  name="Credits, amount"> </field>
+ <field id="87" lengthType="F"  fieldFormat="NUMERIC"  fieldLength="15"  name="Credits, reversal amount"> </field>
+ <field id="88" lengthType="F"  fieldFormat="NUMERIC"  fieldLength="15"  name="Debits, amount"> </field>
+ <field id="89" lengthType="F"  fieldFormat="NUMERIC"  fieldLength="15"  name="Debits, reversal amount"> </field>
+ <field id="90" lengthType="F"  fieldFormat="NUMERIC"  fieldLength="42"  name="Original data elements"> </field>
+ <field id="91" lengthType="F"  fieldFormat="AN" 	   fieldLength="1"   name="File update code"> </field>
+ <field id="92" lengthType="F"  fieldFormat="NUMERIC"  fieldLength="2"   name="File security code"> </field>
+ <field id="93" lengthType="F"  fieldFormat="NUMERIC"  fieldLength="5"   name="Response indicator"> </field>
+ <field id="94" lengthType="F"  fieldFormat="AN" 	   fieldLength="7"   name="Service indicator"> </field>
+ <field id="95" lengthType="F"  fieldFormat="AN" 	   fieldLength="42"  name="Replacement amounts"> </field>
+ <field id="96" lengthType="F"  fieldFormat="AN" 	   fieldLength="8"   name="Message security code"> </field>
+ <field id="97" lengthType="F"  fieldFormat="NUMERIC"  fieldLength="16"  name="Amount, net settlement"> </field>
+ <field id="98" lengthType="F"  fieldFormat="ANS" 	   fieldLength="25"  name="Payee"> </field>
+ <field id="101" lengthType="F" fieldFormat="ANS" 	   fieldLength="17"  name="File name"> </field>
+ <field id="128" lengthType="F" fieldFormat="BINARY"   fieldLength="8"   name="Message authentication code"> </field>
+ 
+ <field id="2" 	lengthType="V" 	fieldFormat="NUMERIC"    lengthOfLengthField="2" minfieldLength="12" maxfieldLength="19"   name="Primary account number"> </field>"
+ <field id="32" lengthType="V" 	fieldFormat="NUMERIC"    lengthOfLengthField="2" minfieldLength="1"  maxfieldLength="11"   name="Acquiring institution identification code"> </field>"
+ <field id="33" lengthType="V" 	fieldFormat="NUMERIC"    lengthOfLengthField="2" minfieldLength="1"  maxfieldLength="11"   name="Forwarding institution identification code"> </field>"
+ <field id="34" lengthType="V" 	fieldFormat="NUMERIC"    lengthOfLengthField="2" minfieldLength="1"  maxfieldLength="28"   name="Primary account number, extended"> </field>"
+ <field id="35" lengthType="V" 	fieldFormat="NUMERIC"    lengthOfLengthField="2" minfieldLength="12" maxfieldLength="37"   name="Track2"> </field>"
+ <field id="36" lengthType="V" 	fieldFormat="NUMERIC"    lengthOfLengthField="2" minfieldLength="12" maxfieldLength="104"  name="Track3"> </field>"
+ <field id="44" lengthType="V" 	fieldFormat="AN" 		 lengthOfLengthField="2" minfieldLength="1"  maxfieldLength="25"   name="Additional response data"> </field>"
+ <field id="45" lengthType="V" 	fieldFormat="AN" 		 lengthOfLengthField="2" minfieldLength="1"  maxfieldLength="76"   name="Track 1 data"> </field>"
+ <field id="46" lengthType="V" 	fieldFormat="AN" 		 lengthOfLengthField="3" minfieldLength="1"  maxfieldLength="999"  name="Additional data ISO"> </field>"
+ <field id="47" lengthType="V" 	fieldFormat="AN" 		 lengthOfLengthField="3" minfieldLength="1"  maxfieldLength="999"  name="Additional data national"> </field>"
+ <field id="48" lengthType="V" 	fieldFormat="AN" 		 lengthOfLengthField="3" minfieldLength="1"  maxfieldLength="999"  name="Additional data private"> </field>"
+ <field id="54" lengthType="V" 	fieldFormat="AN" 		 lengthOfLengthField="3" minfieldLength="1"  maxfieldLength="120"  name="Additional amounts"> </field>
+ <field id="55" lengthType="V" 	fieldFormat="ANS" 	     lengthOfLengthField="3" minfieldLength="1"  maxfieldLength="999"  name="Integrated Circuit Card Data"> </field>
+ <field id="56" lengthType="V" 	fieldFormat="ANS" 		 lengthOfLengthField="3" minfieldLength="1"  maxfieldLength="999"  name="Reserved ISO"> </field>
+ <field id="57" lengthType="V" 	fieldFormat="ANS" 		 lengthOfLengthField="3" minfieldLength="1"  maxfieldLength="999"  name="Reserved national"> </field>
+ <field id="58" lengthType="V" 	fieldFormat="ANS" 		 lengthOfLengthField="3" minfieldLength="1"  maxfieldLength="999"  name="Reserved national"> </field>
+ <field id="59" lengthType="V" 	fieldFormat="ANS" 		 lengthOfLengthField="3" minfieldLength="1"  maxfieldLength="999"  name="Reserved for national use"> </field>
+ <field id="60" lengthType="V" 	fieldFormat="AN" 		 lengthOfLengthField="3" minfieldLength="1"  maxfieldLength="999"  name="Advice reason code"> </field>
+ <field id="61" lengthType="V" 	fieldFormat="ANS" 		 lengthOfLengthField="3" minfieldLength="1"  maxfieldLength="999"  name="Reserved private"> </field>
+ <field id="62" lengthType="V" 	fieldFormat="ANS" 		 lengthOfLengthField="3" minfieldLength="1"  maxfieldLength="999"  name="Reserved private"> </field>
+ <!--
+	DE 63 Network Data for MASTERCARD  MasterCard Standard: ans; LLLVAR 3 positions
+ --> 
+ <field id="63" lengthType="V" 	fieldFormat="ANS" 		 lengthOfLengthField="3" minfieldLength="1"  maxfieldLength="999"  name="Reserved private"> </field>
+ <field id="72" lengthType="V" 	fieldFormat="ANS" 		 lengthOfLengthField="3" minfieldLength="1"  maxfieldLength="999"  name="Data record"> </field>
+ <field id="99" lengthType="V" 	fieldFormat="NUMERIC"    lengthOfLengthField="2" minfieldLength="1"  maxfieldLength="11"   name="Settlement institution identification code       "> </field>
+ <field id="100" lengthType="V" fieldFormat="NUMERIC"    lengthOfLengthField="2" minfieldLength="1"  maxfieldLength="11"   name="Receiving institution identification code"> </field>
+ <field id="102" lengthType="V" fieldFormat="ANS" 		 lengthOfLengthField="2" minfieldLength="1"  maxfieldLength="28"   name="Account identification 1"> </field>
+ <field id="103" lengthType="V" fieldFormat="ANS" 		 lengthOfLengthField="2" minfieldLength="1"  maxfieldLength="28"   name="Account identification 2"> </field>
+ <field id="104" lengthType="V" fieldFormat="ANS" 		 lengthOfLengthField="3" minfieldLength="1"  maxfieldLength="100"  name="Transaction description"> </field>
+ <field id="105" lengthType="V" fieldFormat="ANS" 		 lengthOfLengthField="3" minfieldLength="1"  maxfieldLength="999"  name="Reserved for ISO use"> </field>
+ <field id="106" lengthType="V" fieldFormat="ANS" 		 lengthOfLengthField="3" minfieldLength="1"  maxfieldLength="999"  name="Reserved for ISO use"> </field>
+ <field id="107" lengthType="V" fieldFormat="ANS" 		 lengthOfLengthField="3" minfieldLength="1"  maxfieldLength="999"  name="Reserved for ISO use"> </field>
+ <field id="108" lengthType="V" fieldFormat="ANS" 		 lengthOfLengthField="3" minfieldLength="1"  maxfieldLength="999"  name="Reserved for ISO use"> </field>
+ <field id="109" lengthType="V" fieldFormat="ANS" 		 lengthOfLengthField="3" minfieldLength="1"  maxfieldLength="999"  name="Reserved for ISO use"> </field>
+ <field id="110" lengthType="V" fieldFormat="ANS" 		 lengthOfLengthField="3" minfieldLength="1"  maxfieldLength="999"  name="Reserved for ISO use"> </field>
+ <field id="111" lengthType="V" fieldFormat="ANS" 		 lengthOfLengthField="3" minfieldLength="1"  maxfieldLength="999"  name="Reserved for ISO use"> </field>
+ <field id="112" lengthType="V" fieldFormat="ANS" 		 lengthOfLengthField="3" minfieldLength="1"  maxfieldLength="999"  name="Reserved for ISO use"> </field>
+ <field id="113" lengthType="V" fieldFormat="NUMERIC"    lengthOfLengthField="2" minfieldLength="1"  maxfieldLength="11"   name="Authorizing agent institution id code"> </field>
+ <field id="114" lengthType="V" fieldFormat="ANS" 		 lengthOfLengthField="3" minfieldLength="1"  maxfieldLength="999"  name="Reserved for ISO use"> </field>
+ <field id="115" lengthType="V" fieldFormat="ANS" 		 lengthOfLengthField="3" minfieldLength="1"  maxfieldLength="999"  name="Reserved for ISO use"> </field>
+ <field id="116" lengthType="V" fieldFormat="ANS" 		 lengthOfLengthField="3" minfieldLength="1"  maxfieldLength="999"  name="Reserved for ISO use"> </field>
+ <field id="117" lengthType="V" fieldFormat="ANS" 		 lengthOfLengthField="3" minfieldLength="1"  maxfieldLength="999"  name="Reserved for ISO use"> </field>
+ <field id="118" lengthType="V" fieldFormat="ANS" 		 lengthOfLengthField="3" minfieldLength="1"  maxfieldLength="999"  name="Reserved for ISO use"> </field>
+ <field id="119" lengthType="V" fieldFormat="ANS" 		 lengthOfLengthField="3" minfieldLength="1"  maxfieldLength="999"  name="Reserved for ISO use"> </field>
+ <field id="120" lengthType="V" fieldFormat="ANS" 		 lengthOfLengthField="3" minfieldLength="1"  maxfieldLength="999"  name="Reserved for ISO use"> </field>
+ <field id="121" lengthType="V" fieldFormat="ANS" 		 lengthOfLengthField="3" minfieldLength="1"  maxfieldLength="999"  name="Reserved for ISO use"> </field>
+ <field id="122" lengthType="V" fieldFormat="ANS" 		 lengthOfLengthField="3" minfieldLength="1"  maxfieldLength="999"  name="Reserved for ISO use"> </field>
+ <field id="123" lengthType="V" fieldFormat="ANS" 		 lengthOfLengthField="3" minfieldLength="1"  maxfieldLength="999"  name="Reserved for ISO use"> </field>
+ <field id="124" lengthType="V" fieldFormat="ANS" 		 lengthOfLengthField="3" minfieldLength="1"  maxfieldLength="255"  name="Info text"> </field>
+ <field id="125" lengthType="V" fieldFormat="ANS" 		 lengthOfLengthField="2" minfieldLength="1"  maxfieldLength="50"   name="Network management information"> </field>
+ <!--
+	DE 126—Switch Private Data for MASTERCARD MasterCard Standard: ans; LLLVAR 3 positions,, value = 050
+ --> 
+ <field id="126" lengthType="V" fieldFormat="ANS" 		 lengthOfLengthField="3" minfieldLength="1"  maxfieldLength="999"  name="Issuer trace id"> </field>
+ <field id="127" lengthType="V" fieldFormat="ANS" 		 lengthOfLengthField="3" minfieldLength="1"  maxfieldLength="999"  name="Reserved for private use"> </field>
+	
+</APP>

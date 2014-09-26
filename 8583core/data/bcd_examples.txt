@@ -1,0 +1,20 @@
+	public static byte[] 	track2arr 	= { (byte)0x0E, //length --> 14 bytes
+							(byte)0x45, (byte)0x67, (byte)0x33, (byte) 0x66, 	// odd PAN 15 digits
+							(byte)0x12, (byte)0x34, (byte)0x56, (byte) 0x7D, 	// separator D
+							(byte)0x15, (byte)0x09, 				// expiration date
+							(byte)0x20, (byte)0x19,					// serv code 201
+							(byte)0x87, (byte)0x55 } ;				// cvv 987
+											
+ 	04 56 73 36 61 23 45 67 D 15 09 20 19
+ 
+ 
+ 	public static byte[] 	track2arr 	= { (byte)0x0C, // length --> 12 bytes
+							(byte)0x45, (byte)0x67, (byte)0x33, (byte)0x66, 	// odd PAN 12 digits
+							(byte)0x12, (byte)0x34,	(byte)0xD1,			// separator D
+							(byte)0x51, (byte)0x11, (byte)0x01,			// exp date 1511, service code 101	
+							(byte)0x98, (byte)0x75, (byte)0x55} ;			// cvv 987		
+											
+	0x0C,
+	45, 67, 33, 66, 12, 34,	D1, 51, 12, 01 
+
+

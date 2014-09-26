@@ -1,0 +1,61 @@
+package es.indarsoft.iso8583core.coretypes;
+ 
+import es.indarsoft.iso8583core.app.Application;
+import es.indarsoft.iso8583core.coretypes.F1Bitmap.Ordinal;
+import es.indarsoft.iso8583core.types.Field;
+ 
+public class CoreTypesFactory {
+
+	private Application app ;
+
+	public CoreTypesFactory( Application app ){
+		this.app = app ;
+	}
+
+   /** 
+    * Create an instance of {@link F0Mti }. 
+    * 
+    */
+    public F0Mti getF0Mti(byte[] bytearr ) { 
+    	
+    	Field field = app.getAppBean().getField( 0 ) ;
+		return F0Mti.get (bytearr , field ) ;
+    } 
+	/** 
+    * Create an instance of {@link F1Bitmap }.
+    * 
+    */
+    public F1Bitmap getF1Bitmap (  byte[] bytearr, Ordinal ordinal )  { 
+ 
+    	Field field = app.getAppBean().getField( 1 ) ;
+    	return F1Bitmap.get (bytearr, ordinal , field ) ;
+    }
+	/**                                                                                                 
+	* Create an instance of {@link F2PrimaryAccountNumber }.                                                     
+	*                                                                                                   
+	*/                                                                                                  
+	public F2PrimaryAccountNumber getF2PrimaryAccountNumber (  byte[] bytearr  )  {              
+        
+		Field field = app.getAppBean().getField( 2 ) ;
+		return F2PrimaryAccountNumber.get(bytearr, field) ;                                                     
+	}                                                                                                   
+                                                                                                    
+	/**                                                                                                 
+	* Create an instance of {@link F2PrimaryAccountNumber }.                                                    
+	*                                                                                                   
+	*/                                                                                                  
+	public F2PrimaryAccountNumber getF2PrimaryAccountNumberIn (  byte[] bytearr )  {            
+        
+    	Field field = app.getAppBean().getField( 2 ) ;
+		return F2PrimaryAccountNumber.getIn(bytearr, field) ;                                                     
+	}                                                                                                   
+	/**                                                         
+	* Create an instance of {@link F35Track2 }.                 
+	*                                                           
+	*/                                                          
+	public F35Track2 getF35Track2 (  byte[] bytearr ) {
+        
+    	Field field = app.getAppBean().getField( 35 ) ;
+		return F35Track2.get(bytearr, field) ;                          
+	} 	
+ 

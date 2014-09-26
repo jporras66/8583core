@@ -1,0 +1,125 @@
+1	b.64	Bit map (b 128 if secondary is present and b 192 if tertiary is present)
+2	n..19	"	Primary account number (PAN)"
+3	n6	Processing code
+4	n12	Amount, transaction
+5	n12	Amount, settlement
+6	n12	Amount, cardholder billing
+7	n10	Transmission date & time
+8	n8	Amount, cardholder billing fee
+9	n8	Conversion rate, settlement
+10	n8	Conversion rate, cardholder billing
+11	n6	System trace audit number
+12	n6	Time, local transaction (hhmmss)
+13	n4	Date, local transaction (MMDD)
+14	n4	Date, expiration
+15	n4	Date, settlement
+16	n4	Date, conversion
+17	n4	Date, capture
+18	n4	Merchant type
+19	n3	Acquiring institution country code
+20	n3	PAN extended, country code
+21	n3	Forwarding institution. country code
+22	n3	Point of service entry mode
+23	n3	Application PAN sequence number
+24	n3	Function code (ISO 8583:1993)/Network International identifier (NII)
+25	n2	Point of service condition code
+26	n2	Point of service capture code
+27	n1	Authorizing identification response length
+28	n8	Amount, transaction fee
+29	n8	Amount, settlement fee
+30	n8	Amount, transaction processing fee
+31	n8	Amount, settlement processing fee
+32	n..11	"	Acquiring institution identification code"
+33	n..11	"	Forwarding institution identification code"
+34	n..28	"	Primary account number, extended number"
+38	an6	Authorization identification response
+39	an2	Response code
+40	an3	Service restriction code
+41	ans16	Card acceptor terminal identification
+42	ans15	Card acceptor identification code
+43	ans40	Card acceptor name/location (1-23 address 24-36 city 37-38 state 39-40 country)
+44	an..25	"	Additional response data"
+45	an..76	"	Track 1 data"
+46	an...999	"	Additional data - ISO"
+47	an...999	"	Additional data - national"
+48	an...999	"	Additional data - private"
+49	an3	Currency code, transaction
+50	an3	Currency code, settlement
+51	an3	Currency code, cardholder billing
+52	b64	Personal identification number data
+53	n18	Security related control information
+54	an...120	Additional amounts
+55	ans...999	Reserved ISO
+56	ans...999	Reserved ISO
+57	ans...999	Reserved national
+58	ans...999	Reserved national
+59	ans...999	Reserved for national use
+60	an.7	Advice/reason code (private reserved)
+61	ans...999	Reserved private
+62	ans...999	Reserved private
+63	ans...999	Reserved private
+64	b16	Message authentication code (MAC)
+65	b64	*Bit indicator of tertiary bitmap only*, tertiary bitmap data follows secondary in test.message stream.
+66	n1	Settlement code
+67	n2	Extended payment code
+68	n3	Receiving institution country code
+69	n3	Settlement institution country code
+70	n3	Network management information code
+71	n4	Message number
+72	ans...999	Data record (ISO 8583:1993)/n 4 Message number, last(?)
+73	n6	Date, action
+74	n10	Credits, number
+75	n10	Credits, reversal number
+76	n10	Debits, number
+77	n10	Debits, reversal number
+78	n10	Transfer number
+79	n10	Transfer, reversal number
+80	n10	Inquiries number
+81	n10	Authorizations, number
+82	n12	Credits, processing fee amount
+83	n12	Credits, transaction fee amount
+84	n12	Debits, processing fee amount
+85	n12	Debits, transaction fee amount
+86	n15	Credits, amount
+87	n15	Credits, reversal amount
+88	n15	Debits, amount
+89	n15	Debits, reversal amount
+90	n42	Original data elements
+91	an1	File update code
+92	n2	File security code
+93	n5	Response indicator
+94	an7	Service indicator
+95	an42	Replacement amounts
+96	an8	Message security code
+97	n16	Amount, net settlement
+98	ans25	Payee
+99	n..11	Settlement institution identification code       
+100	n..11	Receiving institution identification code
+101	ans17	File name
+102	ans..28	Account identification 1
+103	ans..28	Account identification 2
+104	ans...100	Transaction description
+105	ans...999	Reserved for ISO use
+106	ans...999	Reserved for ISO use
+107	ans...999	Reserved for ISO use
+108	ans...999	Reserved for ISO use
+109	ans...999	Reserved for ISO use
+110	ans...999	Reserved for ISO use
+111	ans...999	Reserved for ISO use
+112	ans...999	Reserved for ISO use
+113	n..11	Authorizing agent institution id code
+114	ans...999	Reserved for ISO use
+115	ans...999	Reserved for ISO use
+116	ans...999	Reserved for ISO use
+117	ans...999	Reserved for ISO use
+118	ans...999	Reserved for ISO use
+119	ans...999	Reserved for ISO use
+120	ans...999	Reserved for ISO use
+121	ans...999	Reserved for ISO use
+122	ans...999	Reserved for ISO use
+123	ans...999	Reserved for ISO use
+124	ans...255	Info text
+125	ans..50	Network management information
+126	ans...999	Issuer trace id
+127	ans...999	Reserved for private use
+128	b16	Message authentication code

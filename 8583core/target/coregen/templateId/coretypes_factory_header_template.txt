@@ -1,0 +1,61 @@
+package es.indarsoft.iso8583core.coretypes;
+ 
+import es.indarsoft.iso8583core.app.Application;
+import es.indarsoft.iso8583core.coretypes.F001.Ordinal;
+import es.indarsoft.iso8583core.types.Field;
+ 
+public class CoreTypesFactory {
+
+	private Application app ;
+
+	public CoreTypesFactory( Application app ){
+		this.app = app ;
+	}
+
+   /** 
+    * Create an instance of {@link F000 }. 
+    * 
+    */
+    public F000 getF000(byte[] bytearr ) { 
+    	
+    	Field field = app.getAppBean().getField( 0 ) ;
+		return F000.get (bytearr , field ) ;
+    } 
+	/** 
+    * Create an instance of {@link F001 }.
+    * 
+    */
+    public F001 getF001 (  byte[] bytearr, Ordinal ordinal )  { 
+ 
+    	Field field = app.getAppBean().getField( 1 ) ;
+    	return F001.get (bytearr, ordinal , field ) ;
+    }
+	/**                                                                                                 
+	* Create an instance of {@link F002 }.                                                     
+	*                                                                                                   
+	*/                                                                                                  
+	public F002 getF002 (  byte[] bytearr  )  {              
+        
+		Field field = app.getAppBean().getField( 2 ) ;
+		return F002.get(bytearr, field) ;                                                     
+	}                                                                                                   
+                                                                                                    
+	/**                                                                                                 
+	* Create an instance of {@link F002 }.                                                    
+	*                                                                                                   
+	*/                                                                                                  
+	public F002 getF002In (  byte[] bytearr )  {            
+        
+    	Field field = app.getAppBean().getField( 2 ) ;
+		return F002.getIn(bytearr, field) ;                                                     
+	}                                                                                                   
+	/**                                                         
+	* Create an instance of {@link F035 }.                 
+	*                                                           
+	*/                                                          
+	public F035 getF035 (  byte[] bytearr ) {
+        
+    	Field field = app.getAppBean().getField( 35 ) ;
+		return F035.get(bytearr, field) ;                          
+	} 	
+ 

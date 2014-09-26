@@ -1,0 +1,24 @@
+package es.indarsoft.iso8583core.coretypes;
+
+import es.indarsoft.iso8583core.types.Field;
+import es.indarsoft.iso8583core.types.TypeFixed;
+
+public class <CLASSNAME> extends TypeFixed {
+	
+	private <CLASSNAME> (byte[] bytearr, Field field) {
+		
+		super( bytearr, field ) ;
+    	if ( ! super.isValid() ){
+    		return;
+		}		
+	}	
+	
+	/** Static constructor.
+	 * 
+	 * @param 	bytearr ( coded data ).
+	 * @return	{@link <CLASSNAME> }
+	 */			
+    protected static <CLASSNAME> get ( byte[] bytearr, Field field ){   	
+    	return new <CLASSNAME> ( bytearr, field ) ;
+    }
+}

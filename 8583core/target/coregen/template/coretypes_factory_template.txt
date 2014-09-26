@@ -1,0 +1,13 @@
+	/**
+	* Create an instance of {@link <CLASSNAME>} .
+	* 
+	* @param 	bytearr byte array 
+	* @return	{@link <CLASSNAME>}
+	*/
+	public <CLASSNAME> get<CLASSNAME> (  byte[] bytearr  )  {
+
+		Field field = app.getAppBean().getField( <FIELID> ) ;
+		return <CLASSNAME>.get ( bytearr , field ) ;
+    }  
+
+	
