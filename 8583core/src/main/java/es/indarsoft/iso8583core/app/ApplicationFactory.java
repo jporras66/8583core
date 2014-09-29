@@ -1,7 +1,7 @@
 
 package es.indarsoft.iso8583core.app;
 
-import org.apache.log4j.Logger;
+//import org.apache.log4j.Logger;
 
 /**
  * Static factory for Applications.
@@ -11,7 +11,7 @@ import org.apache.log4j.Logger;
  */
 public class ApplicationFactory {
 
-	static Logger log = Logger.getLogger( ApplicationFactory.class.getName() );
+	//static Logger log = Logger.getLogger( ApplicationFactory.class.getName() );
     
 	/**
 	 * Returns a new Application instance loaded from a XML file.
