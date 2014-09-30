@@ -1,22 +1,22 @@
 package es.indarsoft.iso8583core.message;
 
-import es.indarsoft.utl.ArrayUtl;
-
 import java.util.Arrays;
 import java.util.Hashtable;
-
-import org.apache.log4j.Logger;
-
 import es.indarsoft.iso8583core.app.Application;
 import es.indarsoft.iso8583core.coretypes.*;
 import es.indarsoft.iso8583core.types.TypeMain;
+import es.indarsoft.utl.ArrayUtl;
 
 public class IsoMessage {
 
-	protected static Logger log = Logger.getLogger( IsoMessage.class.getName() );	
+	//protected static Logger log = Logger.getLogger( IsoMessage.class.getName() );	
 	private byte[] 	bytearr ;
 	private Hashtable<Integer, TypeMain > htfield ;
-		
+
+	protected IsoMessage ( byte[] bytearr ) {
+		this.bytearr = bytearr ;
+	}
+	
 	protected IsoMessage ( byte[] bytearr , Application app) {
 		this.bytearr = bytearr ;
 		IsoLoadFields lf = new IsoLoadFields( bytearr, app ) ;
