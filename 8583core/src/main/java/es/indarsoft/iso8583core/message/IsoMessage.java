@@ -9,7 +9,6 @@ import es.indarsoft.utl.ArrayUtl;
 
 public class IsoMessage {
 
-	//protected static Logger log = Logger.getLogger( IsoMessage.class.getName() );	
 	private byte[] 	bytearr ;
 	private Hashtable<Integer, TypeMain > htfield ;
 
@@ -19,8 +18,8 @@ public class IsoMessage {
 	
 	protected IsoMessage ( byte[] bytearr , Application app) {
 		this.bytearr = bytearr ;
-		IsoLoadFields lf = new IsoLoadFields( bytearr, app ) ;
-		this.htfield = lf.putAll ( ) ;
+		IsoLoadFields isolf = new IsoLoadFields( bytearr, app ) ;
+		this.htfield = isolf.putAll ( ) ;
 	}
 	
 	protected IsoMessage ( Hashtable<Integer, TypeMain > ihtfield ) {	
@@ -112,5 +111,9 @@ public class IsoMessage {
 	        out.put( key , typemain );
 	    }
 	    return out;
+	}
+
+	protected void setHtfield(Hashtable<Integer, TypeMain> htfield) {
+		this.htfield = htfield;
 	}	
 }
