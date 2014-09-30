@@ -703,4 +703,8 @@ public class IsoLoadFields {
 		return htfield;
 	}
 
+	public String getBitmapStr() {
+		return bitmapStr;
+	}
+
 }
