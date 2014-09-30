@@ -1,4 +1,4 @@
 -------------------------------------------------------------------------------
 Test set: es.indarsoft.iso8583core.message.Iso8583In2OutTest
 -------------------------------------------------------------------------------
-Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.26 sec - in es.indarsoft.iso8583core.message.Iso8583In2OutTest
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.289 sec - in es.indarsoft.iso8583core.message.Iso8583In2OutTest

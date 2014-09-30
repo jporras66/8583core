@@ -703,6 +703,10 @@ public class IsoLoadFields {
 		return htfield;
 	}
 
+	public Application getApp() {
+		return app;
+	}
+	
 	public String getBitmapStr() {
 		return bitmapStr;
 	}
