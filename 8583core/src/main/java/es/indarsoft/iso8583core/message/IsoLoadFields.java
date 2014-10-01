@@ -231,7 +231,7 @@ public class IsoLoadFields {
 		Field field = app.getAppBean().getField(1);
 		byte[] bar = loadFieldDataArray(field);
 		F001 data = ctf.getF001(bar, ordinal);
-
+		log.debug( " F001 : " + Binary.toHexStr(bar) ) ;
 		return data;
 	}
 
@@ -705,38 +705,39 @@ public class IsoLoadFields {
 
 		F000 mti = loadF000();
 		htfieldtmp.put(mti.getFieldId(), mti);
+		log.debug(" MTI  : " + mti.toString());
 		//
 		F001 bitmap = loadF001(F001.Ordinal.FIRST);
 		htfieldtmp.put(bitmap.getFieldId(), bitmap);
 		//
 		this.bitmapStr = bitmap.getBitmapStr();
-		log.debug("F001 is : " + bitmap.getBitmapStr());
+		log.debug(" F001 : " + bitmap.getBitmapStr());
 		//
 		if (bitmap.hasAnotherBitmap()) {
 			F001 secondbitmap = loadF001(F001.Ordinal.SECOND);
 			this.bitmapStr = bitmapStr + secondbitmap.getBitmapStr();
 			htfieldtmp.put(secondbitmap.getFieldId(), secondbitmap);
-			log.debug("F001 secondBitmap : " + secondbitmap.getBitmapStr());
+			log.debug(" F001 secondBitmap : " + secondbitmap.getBitmapStr());
 			//
 			byte[] bar = ArrayUtl.concat(bitmap.getBytearr(),
 					secondbitmap.getBytearr());
 			// bitmap = F001.get( bar, F001.Ordinal.SECOND ) ;
 			bitmap = ctf.getF001(bar, F001.Ordinal.SECOND);
 			this.bitmapStr = bitmap.getBitmapStr();
-			log.debug("F001 is : " + bitmap.getBitmapStr());
+			log.debug(" F001 : " + bitmap.getBitmapStr());
 
 			if (secondbitmap.hasAnotherBitmap()) {
 				F001 thirdbitmap = loadF001(F001.Ordinal.THIRD);
 				this.bitmapStr = bitmapStr + thirdbitmap.getBitmapStr();
 				htfieldtmp.put(thirdbitmap.getFieldId(), thirdbitmap);
-				log.debug("F001 thirdbitmap : " + thirdbitmap.getBitmapStr());
+				log.debug(" F001 thirdbitmap : " + thirdbitmap.getBitmapStr());
 				//
 				bar = ArrayUtl.concat(secondbitmap.getBytearr(),
 						thirdbitmap.getBytearr());
 				// bitmap = F001.get( bar, F001.Ordinal.THIRD ) ;
 				bitmap = ctf.getF001(bar, F001.Ordinal.THIRD);
 				this.bitmapStr = bitmap.getBitmapStr();
-				log.debug("F001 is : " + bitmap.getBitmapStr());
+				log.debug(" F001 : " + bitmap.getBitmapStr());
 			}
 		}
 		return htfieldtmp;
