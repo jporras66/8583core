@@ -31,6 +31,27 @@ public class IsoLoadFields {
 		this.app = app;
 		this.ctf = new CoreTypesFactory(app);
 	}
+
+	protected byte[] loadFieldDataArray(Field field) {
+
+		byte[] bar = dataArray(bytearr, field, startpointer);
+		endpointer = startpointer + bar.length;
+		startpointer = endpointer;
+		return bar;
+	}
+	
+	protected static byte[] dataArray(byte[] bytearr, Field field, int startpointer) {
+
+		byte[] bar = null;
+		if (field.getLengthType() == LengthType.F) {
+			bar = byteArrayFixedField(bytearr, field, startpointer);
+		}
+
+		if (field.getLengthType() == LengthType.V) {
+			bar = byteArrayVarField(bytearr, field, startpointer);
+		}
+		return bar;
+	}
 	
 	protected static byte[] byteArrayFixedField(byte[] bytearr, Field field, int startpointer) {
 
@@ -71,18 +92,6 @@ public class IsoLoadFields {
 		return Arrays.copyOfRange(bytearr, startpointer, endpointer);
 	}
 
-	protected static byte[] dataArray(byte[] bytearr, Field field, int startpointer) {
-
-		byte[] bar = null;
-		if (field.getLengthType() == LengthType.F) {
-			bar = byteArrayFixedField(bytearr, field, startpointer);
-		}
-
-		if (field.getLengthType() == LengthType.V) {
-			bar = byteArrayVarField(bytearr, field, startpointer);
-		}
-		return bar;
-	}
 
 	protected TypeMain getBitmappedFieldId(int fieldid) {
 
@@ -106,8 +115,10 @@ public class IsoLoadFields {
 			return loadF007();
 		case 9:
 			return loadF009();
+		case 10:
+			return loadF010();
 		case 11:
-			return loadF011();
+			return loadF011();			
 		case 12:
 			return loadF012();
 		case 13:
@@ -118,12 +129,16 @@ public class IsoLoadFields {
 			return loadF015();
 		case 16:
 			return loadF016();
+		case 17:
+			return loadF017();			
 		case 18:
 			return loadF018();
 		case 19:
 			return loadF019();
 		case 20:
 			return loadF020();
+		case 21:
+			return loadF021();			
 		case 22:
 			return loadF022();
 		case 23:
@@ -132,6 +147,8 @@ public class IsoLoadFields {
 			return loadF025();
 		case 28:
 			return loadF028();
+		case 31:
+			return loadF031();			
 		case 32:
 			return loadF032();
 		case 33:
@@ -278,6 +295,15 @@ public class IsoLoadFields {
 		return data;
 	}
 
+	private F010 loadF010() {
+
+		Field field = app.getAppBean().getField(10);
+		byte[] bar = loadFieldDataArray(field);
+		F010 data = ctf.getF010(bar);
+		log.debug(" F010 : " + data.toString());
+
+		return data;
+	}
 	private F011 loadF011() {
 
 		Field field = app.getAppBean().getField(11);
@@ -330,13 +356,23 @@ public class IsoLoadFields {
 
 	private F016 loadF016() {
 
-		Field field = app.getAppBean().getField(15);
+		Field field = app.getAppBean().getField(16);
 		byte[] bar = loadFieldDataArray(field);
 		F016 data = ctf.getF016(bar);
 		log.debug(" F016 : " + data.toString());
 
 		return data;
 	}
+	
+	private F017 loadF017() {
+
+		Field field = app.getAppBean().getField(17);
+		byte[] bar = loadFieldDataArray(field);
+		F017 data = ctf.getF017(bar);
+		log.debug(" F017 : " + data.toString());
+
+		return data;
+	}	
 
 	private F018 loadF018() {
 
@@ -368,6 +404,16 @@ public class IsoLoadFields {
 		return data;
 	}
 
+	private F021 loadF021() {
+
+		Field field = app.getAppBean().getField(21);
+		byte[] bar = loadFieldDataArray(field);
+		F021 data = ctf.getF021(bar);
+		log.debug(" F021 : " + data.toString());
+
+		return data;
+	}	
+	
 	private F022 loadF022() {
 
 		Field field = app.getAppBean().getField(22);
@@ -408,6 +454,16 @@ public class IsoLoadFields {
 		return data;
 	}
 
+	private F031 loadF031() {
+
+		Field field = app.getAppBean().getField(31);
+		byte[] bar = loadFieldDataArray(field);
+		F031 data = ctf.getF031(bar);
+		log.debug(" F031 : " + data.toString());
+
+		return data;
+	}
+	
 	private F032 loadF032() {
 
 		Field field = app.getAppBean().getField(32);
@@ -416,7 +472,7 @@ public class IsoLoadFields {
 		log.debug(" F032 : " + data.toString());
 
 		return data;
-	}
+	}	
 
 	private F033 loadF033() {
 
@@ -641,15 +697,6 @@ public class IsoLoadFields {
 		log.debug(" F126 : " + data.toString());
 
 		return data;
-	}
-
-	//
-	protected byte[] loadFieldDataArray(Field field) {
-
-		byte[] bar = IsoLoadFields.dataArray(bytearr, field, startpointer);
-		endpointer = startpointer + bar.length;
-		startpointer = endpointer;
-		return bar;
 	}
 
 	protected Hashtable<Integer, TypeMain> notbitmappedFields() {
