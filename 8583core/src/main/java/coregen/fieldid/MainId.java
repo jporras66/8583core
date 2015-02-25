@@ -8,15 +8,15 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 
-import es.indarsoft.utl.Utl;
-import es.indarsoft.iso8583core.app.AppBean;
-import es.indarsoft.iso8583core.app.Application;
-import es.indarsoft.iso8583core.app.ApplicationFactory;
-import es.indarsoft.iso8583core.app.Config;
-import es.indarsoft.iso8583core.types.Field;
-import es.indarsoft.iso8583core.types.LengthType;
+import com.indarsoft.utl.Utl;
+import com.indarsoft.iso8583core.app.AppBean;
+import com.indarsoft.iso8583core.app.Application;
+import com.indarsoft.iso8583core.app.ApplicationFactory;
+import com.indarsoft.iso8583core.app.Config;
+import com.indarsoft.iso8583core.types.Field;
+import com.indarsoft.iso8583core.types.LengthType;
 /**
- * Java source generator for package es.indarsoft.iso8583core.coretypes.
+ * Java source generator for package com.indarsoft.iso8583core.coretypes.
  * <p>
  * <pre>
  * &ltAPLDIR&gt/coregen: with the following structure

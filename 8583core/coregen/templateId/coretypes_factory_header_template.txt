@@ -1,8 +1,8 @@
-package es.indarsoft.iso8583core.coretypes;
+package com.indarsoft.iso8583core.coretypes;
  
-import es.indarsoft.iso8583core.app.Application;
-import es.indarsoft.iso8583core.coretypes.F001.Ordinal;
-import es.indarsoft.iso8583core.types.Field;
+import com.indarsoft.iso8583core.app.Application;
+import com.indarsoft.iso8583core.coretypes.F001.Ordinal;
+import com.indarsoft.iso8583core.types.Field;
  
 public class CoreTypesFactory {
 

@@ -1,7 +1,7 @@
-package es.indarsoft.iso8583core.coretypes;
+package com.indarsoft.iso8583core.coretypes;
 
-import es.indarsoft.iso8583core.types.TypeFixed;
-import es.indarsoft.iso8583core.types.Field;
+import com.indarsoft.iso8583core.types.TypeFixed;
+import com.indarsoft.iso8583core.types.Field;
 
 public class F0Mti extends TypeFixed {
 

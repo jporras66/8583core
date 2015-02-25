@@ -1,10 +1,10 @@
-package es.indarsoft.iso8583core.coretypes.save;
+package com.indarsoft.iso8583core.coretypes.save;
 
 import java.util.Arrays;
 
-import es.indarsoft.iso8583core.codification.types.Field;
-import es.indarsoft.iso8583core.codification.types.FieldCodificationType;
-import es.indarsoft.iso8583core.primitives.TypeVar;
+import com.indarsoft.iso8583core.codification.types.Field;
+import com.indarsoft.iso8583core.codification.types.FieldCodificationType;
+import com.indarsoft.iso8583core.primitives.TypeVar;
 
 /**
  * 	FIELD 35—Track2

@@ -1,8 +1,8 @@
-package es.indarsoft.iso8583core.coretypes;
+package com.indarsoft.iso8583core.coretypes;
 
-import es.indarsoft.utl.Binary;
-import es.indarsoft.iso8583core.types.TypeVar;
-import es.indarsoft.iso8583core.types.Field;
+import com.indarsoft.utl.Binary;
+import com.indarsoft.iso8583core.types.TypeVar;
+import com.indarsoft.iso8583core.types.Field;
 
 /**
  * 	BITMAP

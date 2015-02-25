@@ -1,7 +1,7 @@
+com.indarsoft.iso8583core.app
+com.indarsoft.iso8583core.coretypes
+com.indarsoft.iso8583core.message
+com.indarsoft.iso8583core.types
+com.indarsoft.iso8583core.utl
 coregen.fieldid
 coregen.fieldname
-es.indarsoft.iso8583core.app
-es.indarsoft.iso8583core.coretypes
-es.indarsoft.iso8583core.message
-es.indarsoft.iso8583core.types
-es.indarsoft.iso8583core.utl

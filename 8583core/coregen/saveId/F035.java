@@ -1,12 +1,12 @@
-package es.indarsoft.iso8583core.coretypes;
+package com.indarsoft.iso8583core.coretypes;
 
 import java.util.Arrays;
-import es.indarsoft.utl.Bcd;
-import es.indarsoft.utl.Binary;
-import es.indarsoft.iso8583core.types.TypeVar;
-import es.indarsoft.iso8583core.types.Field;
-import es.indarsoft.iso8583core.types.FieldCodificationType;
-import es.indarsoft.iso8583core.utl.Common;
+import com.indarsoft.utl.Bcd;
+import com.indarsoft.utl.Binary;
+import com.indarsoft.iso8583core.types.TypeVar;
+import com.indarsoft.iso8583core.types.Field;
+import com.indarsoft.iso8583core.types.FieldCodificationType;
+import com.indarsoft.iso8583core.utl.Common;
 
 /**
  * 	FIELD 35 Track2

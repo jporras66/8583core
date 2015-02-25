@@ -1,6 +1,6 @@
-package es.indarsoft.iso8583core.coretypes;
+package com.indarsoft.iso8583core.coretypes;
 
-import es.indarsoft.iso8583core.codification.types.Field;
+import com.indarsoft.iso8583core.codification.types.Field;
 
 /**
  * 	Service Code
