@@ -1,6 +1,6 @@
 package com.indarsoft.iso8583core.types;
 /**
- * Field class that maps a filed data entry in <apl_dir>/config/*.xml file
+ * Field class that maps a filed data entry in &lt;APLDIR&gt;/config/*.xml file
  * <p>
  * <pre>
  * Attributes:

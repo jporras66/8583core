@@ -14,7 +14,7 @@ import com.indarsoft.utl.Utl;
  * Configuration File for the {@link Application}.
  * <p>
  * <pre>
- * Configuration files (<filename>.properties) must be stored in <APLDIR>/config directory.
+ * Configuration files (&lt;filename&gt;.properties) must be stored in &lt;APLDIR&gt;/config directory.
  * </pre>
  * @author fjavier.porras@gmail.com
  *
@@ -33,9 +33,9 @@ public final class Config {
 	 * Constructor.
 	 * <p>
 	 * @param apldir
-	 * 			<APLDIR> directory.
+	 * 			&lt;APLDIR&gt; directory.
 	 * @param configfile
-	 * 			Configuration files (<filename>.properties) must be stored in <APLDIR>/config directory.
+	 * 			Configuration files (&lt;filename&gt;.properties) must be stored in &lt;APLDIR&gt;/config directory.
 	 * @throws IllegalArgumentException
 	 */
 	public Config( String apldir, String configfile ) throws IllegalArgumentException {
@@ -55,7 +55,7 @@ public final class Config {
 	 * Constructor.
 	 * <p>
 	 * @param configfile
-	 * 			Configuration file (<filename>.properties) must be stored in <APLDIR>/config directory.				
+	 * 			Configuration file (&lt;filename&gt;.properties) must be stored in &lt;APLDIR&gt;/config directory.				
 	 */
 	public Config( String configfile ){
 			

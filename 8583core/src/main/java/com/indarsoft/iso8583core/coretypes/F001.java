@@ -40,7 +40,7 @@ public class F001 extends TypeVar {
     }
 	/**  Test if F001 contains field number 
 	 * 
-	 * 	@param 	fieldNumber int ( > 0 ).
+	 * 	@param 	fieldNumber int ( &lt; 0 ).
 	 * 	@return boolean
 	 * 
 	 */	

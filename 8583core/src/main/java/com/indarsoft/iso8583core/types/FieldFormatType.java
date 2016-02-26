@@ -6,7 +6,7 @@ package com.indarsoft.iso8583core.types;
  *  <p>
  * 	0 - NUMERIC		numeric <br>
  * 	1 - AN			Alphanumeric <br>
- * 	2 - ANS			Alphanumeric & special <br>
+ * 	2 - ANS			Alphanumeric and special <br>
  * 	3 - BINARY		Binary  <br>
  * 	
  */

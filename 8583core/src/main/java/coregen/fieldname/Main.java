@@ -19,16 +19,16 @@ import com.indarsoft.iso8583core.types.LengthType;
  * Java source generator for package com.indarsoft.iso8583core.coretypes.
  * <p>
  * <pre>
- * &ltAPLDIR&gt/coregen: with the following structure
+ * &lt;APLDIR&gt;/coregen: with the following structure
  * 			template: Stored templates to generate java classes ( CoretypesFactory.java and Fxxx data types ).
  * 			save    : Java classes in this directory are copied unchanged.
  * 			tmp     : Directory to store generated Java classes.
- * &ltAPLDIR&gt/config :
+ * &lt;APLDIR&gt;/config :
  * 			Stores different *.properties and *.xml files 
  * 
  * Before execute review :
  * 
- * 		&ltAPLDIR&gt : Base directory where the directory structure <apl_dir>/coregen and config is expected  
+ * 		&lt;APLDIR&gt; : Base directory where the directory structure &lt;APLDIR&gt;/coregen and config is expected  
  *          DIR = "C:"+sep+"DATOS"+sep+"E"+sep+"workspace"+sep+"8583core";
  *      CONFIGFILE 	: 
  *      	CONFIGFILE = "main.properties";

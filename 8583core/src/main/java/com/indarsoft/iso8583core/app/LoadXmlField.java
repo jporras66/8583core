@@ -69,11 +69,12 @@ public class LoadXmlField extends DefaultHandler {
 	}
 	
 /** 
- *  First load default values & all fields defined at APP level 
+ *  First load default values and all fields defined at APP level 
  *  Second read all fields defined at iso8583 level. Existing fields loaded yet are not UPDATED !!!
  * 	
- * @param 	appXmlfilename
- * @return	AppData
+ * @param 	appXmlfilename app xml filename 
+ * @param 	iso8583Xmlfilename iso8583 xml filename 
+ * @return	AppBean
  */
 	public AppBean parseAppXml(String appXmlfilename , String iso8583Xmlfilename) {
 
