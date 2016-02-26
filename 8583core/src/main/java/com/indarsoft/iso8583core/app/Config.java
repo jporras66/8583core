@@ -35,7 +35,7 @@ public final class Config {
 	 * @param apldir
 	 * 			&lt;APLDIR&gt; directory.
 	 * @param configfile
-	 * 			Configuration files (&lt;filename&gt;.properties) must be stored in &lt;APLDIR&gt;/config directory.
+	 * 			Configuration files (&lt;filename&gt;.properties) must be stored in &lt;APLDIR&gt;/config directory.  
 	 * @throws IllegalArgumentException
 	 */
 	public Config( String apldir, String configfile ) throws IllegalArgumentException {
